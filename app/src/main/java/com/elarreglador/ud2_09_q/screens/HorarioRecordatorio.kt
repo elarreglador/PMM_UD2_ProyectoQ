@@ -36,7 +36,8 @@ import com.elarreglador.ud2_09_q.reusable.ListaReloj
 fun HorarioRecordatorio(navController: NavController) {
     val selectedHour = remember { mutableStateOf("") }
     var selectedMinute = remember { mutableStateOf("") }
-    var btnEnabled = remember {mutableStateOf(false) }
+    var btnEnabledHours = remember {mutableStateOf(false) }
+    var btnEnabledMinutes = remember {mutableStateOf(false) }
 
 
 
@@ -66,14 +67,14 @@ fun HorarioRecordatorio(navController: NavController) {
             ) {
 
                 Row(){
-                    Desplegable(selectedHour, ListaReloj.Horas, "HH", btnEnabled)
+                    Desplegable(selectedHour, ListaReloj.Horas, "HH", btnEnabledHours)
                     Text(
                         text = ":",
                         style = MaterialTheme.typography.titleLarge,
                         modifier = Modifier
                             .padding(20.dp)
                     )
-                    Desplegable( selectedMinute, ListaReloj.Minutos, "MM",btnEnabled)
+                    Desplegable( selectedMinute, ListaReloj.Minutos, "MM",btnEnabledMinutes)
                 }
 
                 Spacer(modifier = Modifier.weight(1f))
@@ -85,8 +86,8 @@ fun HorarioRecordatorio(navController: NavController) {
                         .padding(16.dp)
                 ) {
                     Button(
-                        enabled = btnEnabled.value,
-                        onClick = { navController.navigate("RegresoScreen") },
+                        enabled = btnEnabledHours.value && btnEnabledMinutes.value,
+                        onClick = { /*TODO*/ },
                         modifier = Modifier.align(Alignment.BottomEnd)
                     ) {
                         Text("Next")
