@@ -21,7 +21,7 @@ fun Desplegable(
     expanded: MutableState<Boolean>,
     selectedItem: MutableState<String>,
     items: List<String>,
-    btnEnabled: MutableState<Boolean>
+    seleccionHecha: MutableState<Boolean>
 ) {
     Box(
         modifier = Modifier
@@ -58,7 +58,7 @@ fun Desplegable(
                 onClick = {
                     selectedItem.value = item // Actualizar ítem seleccionado
                     expanded.value = false // Cerrar el menú
-                    btnEnabled.value = true
+                    seleccionHecha.value = true
                 },
             )
         }

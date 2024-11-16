@@ -61,7 +61,7 @@ fun OrigenScreen(navController: NavController) {
                     .padding(paddingValues)
                     .padding(16.dp)
             ) {
-                // Botón para activar el DropdownMenu
+
                 Desplegable( expanded, selectedItem, ListaPaises.List, btnEnabled)
 
                 Spacer(modifier = Modifier.weight(1f))
