@@ -32,7 +32,6 @@ import com.elarreglador.ud2_09_q.reusable.ListaPaises
 
 @Composable
 fun RegresoScreen(navController: NavController) {
-    val expanded = remember { mutableStateOf(false) } // Controla la visibilidad del menú
     val selectedItem = remember { mutableStateOf("") } // Para mostrar el ítem seleccionado
     var btnEnabled = remember {mutableStateOf(false) }
 
@@ -63,7 +62,7 @@ fun RegresoScreen(navController: NavController) {
                     .padding(16.dp)
             ) {
 
-                Desplegable( expanded, selectedItem, ListaPaises.List, btnEnabled)
+                Desplegable( selectedItem, ListaPaises.List, "Selecciona pais", btnEnabled)
 
                 Spacer(modifier = Modifier.weight(1f))
 
@@ -75,7 +74,7 @@ fun RegresoScreen(navController: NavController) {
                 ) {
                     Button(
                         enabled = btnEnabled.value,
-                        onClick = { /* TODO */},
+                        onClick = { navController.navigate("HorarioRecordatorio") },
                         modifier = Modifier.align(Alignment.BottomEnd)
                     ) {
                         Text("Next")

@@ -12,26 +12,29 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun Desplegable(
-    expanded: MutableState<Boolean>,
     selectedItem: MutableState<String>,
     items: List<String>,
+    texto: String,
     seleccionHecha: MutableState<Boolean>
 ) {
+    val expanded = remember { mutableStateOf(false) }
+
     Box(
         modifier = Modifier
-            .fillMaxWidth()
             .background(MaterialTheme.colorScheme.surface)
             .padding(16.dp)
             .clickable { expanded.value = true }
     ) {
         Text(
-            text = if (selectedItem.value.isEmpty()) " ▼ Selecciona un país " else selectedItem.value,
+            text = if (selectedItem.value.isEmpty()) " ▼ $texto" else selectedItem.value,
             Modifier
                 .border(
                     1.dp,

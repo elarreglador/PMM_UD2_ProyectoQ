@@ -26,7 +26,6 @@ import com.elarreglador.ud2_09_q.reusable.ListaPaises
 
 @Composable
 fun OrigenScreen(navController: NavController) {
-    val expanded = remember { mutableStateOf(false) } // Controla la visibilidad del menú
     val selectedItem = remember { mutableStateOf("") } // Para mostrar el ítem seleccionado
     var btnEnabled = remember {mutableStateOf(false) }
 
@@ -55,7 +54,7 @@ fun OrigenScreen(navController: NavController) {
                     .padding(16.dp)
             ) {
 
-                Desplegable( expanded, selectedItem, ListaPaises.List, btnEnabled)
+                Desplegable( selectedItem, ListaPaises.List, "Selecciona pais", btnEnabled)
 
                 Spacer(modifier = Modifier.weight(1f))
 

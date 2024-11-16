@@ -1,5 +1,6 @@
 package com.elarreglador.ud2_09_q.screens
 
+import android.R.style
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -7,6 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,12 +30,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.elarreglador.ud2_09_q.reusable.Desplegable
-import com.elarreglador.ud2_09_q.reusable.ListaPaises
+import com.elarreglador.ud2_09_q.reusable.ListaReloj
 
 @Composable
 fun HorarioRecordatorio(navController: NavController) {
-    val expanded = remember { mutableStateOf(false) } // Controla la visibilidad del menú
-    val selectedItem = remember { mutableStateOf("") } // Para mostrar el ítem seleccionado
+    val selectedHour = remember { mutableStateOf("") }
+    var selectedMinute = remember { mutableStateOf("") }
     var btnEnabled = remember {mutableStateOf(false) }
 
 
@@ -63,7 +65,16 @@ fun HorarioRecordatorio(navController: NavController) {
                     .padding(16.dp)
             ) {
 
-                Desplegable( expanded, selectedItem, ListaPaises.List, btnEnabled)
+                Row(){
+                    Desplegable(selectedHour, ListaReloj.Horas, "HH", btnEnabled)
+                    Text(
+                        text = ":",
+                        style = MaterialTheme.typography.titleLarge,
+                        modifier = Modifier
+                            .padding(20.dp)
+                    )
+                    Desplegable( selectedMinute, ListaReloj.Minutos, "MM",btnEnabled)
+                }
 
                 Spacer(modifier = Modifier.weight(1f))
 
