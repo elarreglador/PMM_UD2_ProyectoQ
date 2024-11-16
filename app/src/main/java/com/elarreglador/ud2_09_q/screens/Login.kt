@@ -1,12 +1,10 @@
 package com.elarreglador.ud2_09_q.screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -23,10 +21,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.elarreglador.ud2_09_q.R
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
 
     Column(
         modifier = Modifier
@@ -64,7 +64,7 @@ fun LoginScreen() {
 
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate("OrigenScreen") },
             modifier = Modifier.align(Alignment.End)
         ) {
             Text("Next")
@@ -89,5 +89,6 @@ fun LoginScreen() {
 @Composable
 @Preview (showSystemUi = true)
 fun LoginScreenPreview(){
-    LoginScreen()
+    val navController = rememberNavController()
+    LoginScreen(navController)
 }
