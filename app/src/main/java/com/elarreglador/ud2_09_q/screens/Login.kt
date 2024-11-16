@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -23,11 +25,10 @@ import com.elarreglador.ud2_09_q.R
 @Composable
 fun LoginScreen() {
 
-    var nick = ""
-
-    Column (
+    Column(
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .padding(60.dp),
     ){
         Image(
@@ -47,29 +48,29 @@ fun LoginScreen() {
 
         TextField(
             value = "",
-            onValueChange = {nick = it},
-            label = { Text("Nick")},
+            onValueChange = { /* TODO */ },
+            label = { Text("Nick") },
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
         TextField(
             value = "",
-            onValueChange = {nick = it},
-            label = { Text("Password")},
-            visualTransformation =  PasswordVisualTransformation(),
+            onValueChange = { /* TODO */ },
+            label = { Text("Password") },
+            visualTransformation = PasswordVisualTransformation(),
         )
 
-        // Empuja el boton abajo
-        Spacer(modifier = Modifier.weight(1f))
+        Spacer(modifier = Modifier.height(16.dp))
+
 
         Button(
             onClick = { /*TODO*/ },
-            modifier = Modifier
-                .align(Alignment.End)
+            modifier = Modifier.align(Alignment.End)
         ) {
-            Text("Siguiente")
+            Text("Next")
         }
+
     }
 }
 
