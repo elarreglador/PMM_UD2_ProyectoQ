@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    UD2_09_QTheme {
+    UD2_09_QTheme{
         LoginScreen()
     }
 }

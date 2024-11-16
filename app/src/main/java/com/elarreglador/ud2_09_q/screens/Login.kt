@@ -73,7 +73,7 @@ fun LoginScreen() {
         Spacer(modifier = Modifier.weight(1f))
         Text(
             "Hidroxicioroquina 400+",
-            style = MaterialTheme.typography.headlineSmall,
+            color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
                 .padding(
                     top = 0.dp,
