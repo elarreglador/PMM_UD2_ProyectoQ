@@ -93,5 +93,5 @@ fun DestinoScreen(navController: NavController) {
 @Preview (showSystemUi = true)
 fun DestinoScreenPreview() {
     val navController = rememberNavController()
-    OrigenScreen(navController)
+    DestinoScreen(navController)
 }

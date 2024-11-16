@@ -31,7 +31,7 @@ import com.elarreglador.ud2_09_q.reusable.Desplegable
 import com.elarreglador.ud2_09_q.reusable.ListaPaises
 
 @Composable
-fun RegresoScreen(navController: NavController) {
+fun HorarioRecordatorio(navController: NavController) {
     val expanded = remember { mutableStateOf(false) } // Controla la visibilidad del menú
     val selectedItem = remember { mutableStateOf("") } // Para mostrar el ítem seleccionado
     var btnEnabled = remember {mutableStateOf(false) }
@@ -46,7 +46,7 @@ fun RegresoScreen(navController: NavController) {
                     .background(MaterialTheme.colorScheme.primary)
             ) {
                 Text(
-                    text = "Pais de regreso",
+                    text = "Horario para los recordatorios",
                     style = MaterialTheme.typography.titleLarge,
                     modifier = Modifier
                         .align(Alignment.Center)
@@ -75,7 +75,7 @@ fun RegresoScreen(navController: NavController) {
                 ) {
                     Button(
                         enabled = btnEnabled.value,
-                        onClick = { /* TODO */},
+                        onClick = { navController.navigate("RegresoScreen") },
                         modifier = Modifier.align(Alignment.BottomEnd)
                     ) {
                         Text("Next")
@@ -91,7 +91,7 @@ fun RegresoScreen(navController: NavController) {
 
 @Composable
 @Preview (showSystemUi = true)
-fun RegresoScreenPreview() {
+fun HorarioRecordatorioPreview() {
     val navController = rememberNavController()
-    RegresoScreen(navController)
+    HorarioRecordatorio(navController)
 }
