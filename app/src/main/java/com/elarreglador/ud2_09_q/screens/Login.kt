@@ -81,8 +81,7 @@ fun LoginScreen(navController: NavController) {
                     end = 0.dp,
                     bottom = 60.dp
                 ),
-            )
-
+        )
     }
 }
 
