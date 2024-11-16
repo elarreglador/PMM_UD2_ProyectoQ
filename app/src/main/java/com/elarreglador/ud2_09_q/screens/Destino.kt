@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -27,13 +29,16 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.elarreglador.ud2_09_q.reusable.Desplegable
 import com.elarreglador.ud2_09_q.reusable.ListaPaises
+import com.elarreglador.ud2_09_q.reusable.SelectorDeFecha
 
 
 @Composable
-fun OrigenScreen(navController: NavController) {
+fun DestinoScreen(navController: NavController) {
     val expanded = remember { mutableStateOf(false) } // Controla la visibilidad del menú
     val selectedItem = remember { mutableStateOf("") } // Para mostrar el ítem seleccionado
     var btnEnabled = remember {mutableStateOf(false) }
+
+
 
     Scaffold(
         topBar = {
@@ -72,7 +77,7 @@ fun OrigenScreen(navController: NavController) {
                 ) {
                     Button(
                         enabled = btnEnabled.value,
-                        onClick = { navController.navigate("DestinoScreen") },
+                        onClick = { /* TODO */},
                         modifier = Modifier.align(Alignment.BottomEnd)
                     ) {
                         Text("Next")
@@ -88,7 +93,7 @@ fun OrigenScreen(navController: NavController) {
 
 @Composable
 @Preview (showSystemUi = true)
-fun OrigenScreenPreview() {
+fun DestinoScreenPreview() {
     val navController = rememberNavController()
     OrigenScreen(navController)
 }
