@@ -1,9 +1,12 @@
 package com.elarreglador.ud2_09_q.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -29,19 +32,15 @@ fun LoginScreen() {
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(60.dp),
+            .padding(top = 0.dp, start = 60.dp, end = 60.dp, bottom = 0.dp),
     ){
         Image(
             painter = painterResource(id = R.drawable.logo),
             contentDescription = null,
             modifier = Modifier
-                .height(400.dp)
-                .width(400.dp)
-        )
-
-        Text(
-            "Hidroxicioroquina 400+",
-            style = MaterialTheme.typography.headlineSmall,
+                .aspectRatio(1f)
+                .height(200.dp)
+                .width(200.dp)
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -70,6 +69,19 @@ fun LoginScreen() {
         ) {
             Text("Next")
         }
+
+        Spacer(modifier = Modifier.weight(1f))
+        Text(
+            "Hidroxicioroquina 400+",
+            style = MaterialTheme.typography.headlineSmall,
+            modifier = Modifier
+                .padding(
+                    top = 0.dp,
+                    start = 0.dp,
+                    end = 0.dp,
+                    bottom = 60.dp
+                ),
+            )
 
     }
 }
