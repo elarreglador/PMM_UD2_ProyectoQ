@@ -29,8 +29,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.elarreglador.ud2_09_q.reusable.Desplegable
 import com.elarreglador.ud2_09_q.reusable.ListaPaises
-import com.elarreglador.ud2_09_q.reusable.SelectorDeFecha
-
 
 @Composable
 fun DestinoScreen(navController: NavController) {
@@ -48,7 +46,7 @@ fun DestinoScreen(navController: NavController) {
                     .background(MaterialTheme.colorScheme.primary)
             ) {
                 Text(
-                    text = "Pais de origen",
+                    text = "Pais de destino",
                     style = MaterialTheme.typography.titleLarge,
                     modifier = Modifier
                         .align(Alignment.Center)
@@ -77,7 +75,7 @@ fun DestinoScreen(navController: NavController) {
                 ) {
                     Button(
                         enabled = btnEnabled.value,
-                        onClick = { /* TODO */},
+                        onClick = { navController.navigate("RegresoScreen") },
                         modifier = Modifier.align(Alignment.BottomEnd)
                     ) {
                         Text("Next")

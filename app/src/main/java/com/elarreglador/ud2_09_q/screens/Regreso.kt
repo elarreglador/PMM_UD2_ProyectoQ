@@ -1,13 +1,20 @@
 package com.elarreglador.ud2_09_q.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -23,12 +30,13 @@ import androidx.navigation.compose.rememberNavController
 import com.elarreglador.ud2_09_q.reusable.Desplegable
 import com.elarreglador.ud2_09_q.reusable.ListaPaises
 
-
 @Composable
-fun OrigenScreen(navController: NavController) {
+fun RegresoScreen(navController: NavController) {
     val expanded = remember { mutableStateOf(false) } // Controla la visibilidad del menú
     val selectedItem = remember { mutableStateOf("") } // Para mostrar el ítem seleccionado
     var btnEnabled = remember {mutableStateOf(false) }
+
+
 
     Scaffold(
         topBar = {
@@ -38,7 +46,7 @@ fun OrigenScreen(navController: NavController) {
                     .background(MaterialTheme.colorScheme.primary)
             ) {
                 Text(
-                    text = "Pais de origen",
+                    text = "Pais de regreso",
                     style = MaterialTheme.typography.titleLarge,
                     modifier = Modifier
                         .align(Alignment.Center)
@@ -67,7 +75,7 @@ fun OrigenScreen(navController: NavController) {
                 ) {
                     Button(
                         enabled = btnEnabled.value,
-                        onClick = { navController.navigate("DestinoScreen") },
+                        onClick = { /* TODO */},
                         modifier = Modifier.align(Alignment.BottomEnd)
                     ) {
                         Text("Next")
@@ -83,7 +91,7 @@ fun OrigenScreen(navController: NavController) {
 
 @Composable
 @Preview (showSystemUi = true)
-fun OrigenScreenPreview() {
+fun RegresoScreenPreview() {
     val navController = rememberNavController()
     OrigenScreen(navController)
 }
