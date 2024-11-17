@@ -9,6 +9,7 @@ import com.elarreglador.ud2_09_q.screens.HorarioRecordatorio
 import com.elarreglador.ud2_09_q.screens.LoginScreen
 import com.elarreglador.ud2_09_q.screens.OrigenScreen
 import com.elarreglador.ud2_09_q.screens.RegresoScreen
+import com.elarreglador.ud2_09_q.screens.Tomas
 
 @Composable
 fun Navegador() {
@@ -19,5 +20,6 @@ fun Navegador() {
         composable("DestinoScreen") { DestinoScreen(navController) }
         composable("RegresoScreen") { RegresoScreen(navController) }
         composable("HorarioRecordatorio") { HorarioRecordatorio(navController) }
+        composable("Tomas") { Tomas(navController) }
     }
 }

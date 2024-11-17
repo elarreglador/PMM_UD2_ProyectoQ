@@ -12,3 +12,6 @@ val Rojo = Color(0xFFFF0000)
 val Purple40 = Color(0xFF8D1576)
 val PurpleGrey40 = Color(0xFFD0C5CE)
 val Pink40 = Color(0xFF7D5260)
+
+val Rojo2 = Color(0xFFB30000)
+val Rojo2Suave = Color(0xFFAA6060)

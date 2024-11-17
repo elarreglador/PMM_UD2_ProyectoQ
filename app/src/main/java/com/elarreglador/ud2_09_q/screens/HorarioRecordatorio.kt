@@ -87,7 +87,7 @@ fun HorarioRecordatorio(navController: NavController) {
                 ) {
                     Button(
                         enabled = btnEnabledHours.value && btnEnabledMinutes.value,
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("Tomas") },
                         modifier = Modifier.align(Alignment.BottomEnd)
                     ) {
                         Text("Next")

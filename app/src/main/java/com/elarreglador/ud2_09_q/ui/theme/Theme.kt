@@ -10,6 +10,15 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
+private val InfectedDarkColorScheme = darkColorScheme(
+    primary = Rojo2,
+    onPrimary = Blanco,
+    secondary = Rojo2Suave,
+    onSecondary = Blanco,
+    onSurface = Blanco,
+    onBackground = Blanco,
+)
+
 private val DarkColorScheme = darkColorScheme(
     primary = MoradoLogo,
     onPrimary = Blanco,
@@ -17,6 +26,15 @@ private val DarkColorScheme = darkColorScheme(
     onSecondary = Blanco,
     onSurface = Blanco,
     onBackground = Blanco,
+)
+
+private val InfectedLightColorScheme = lightColorScheme(
+    primary = Rojo2,
+    onPrimary = Blanco,
+    secondary = Rojo2Suave,
+    onSecondary = Negro,
+    onSurface = Negro,
+    onBackground = Negro,
 )
 
 private val LightColorScheme = lightColorScheme(
